@@ -9,10 +9,10 @@ const Sidebar = () => (
     <div>
       <Nav main>
         <li>
-          <a href="">Navegar</a>
+          <a href="#">Navegar</a>
         </li>
         <li>
-          <a href="">Rádio</a>
+          <a href="#">Rádio</a>
         </li>
       </Nav>
       <Nav>
@@ -20,31 +20,31 @@ const Sidebar = () => (
           <span>sua biblioteca</span>
         </li>
         <li>
-          <a href="">Seu Daily Mix</a>
+          <a href="#">Seu Daily Mix</a>
         </li>
         <li>
-          <a href="">Tocados recentemente</a>
+          <a href="#">Tocados recentemente</a>
         </li>
         <li>
-          <a href="">Músicas</a>
+          <a href="#">Músicas</a>
         </li>
         <li>
-          <a href="">Álbums</a>
+          <a href="#">Álbums</a>
         </li>
         <li>
-          <a href="">Artistas</a>
+          <a href="#">Artistas</a>
         </li>
         <li>
-          <a href="">Estações</a>
+          <a href="#">Estações</a>
         </li>
         <li>
-          <a href="">Arquivos locais</a>
+          <a href="#">Arquivos locais</a>
         </li>
         <li>
-          <a href="">Vídeos</a>
+          <a href="#">Vídeos</a>
         </li>
         <li>
-          <a href="">Podcasts</a>
+          <a href="#">Podcasts</a>
         </li>
       </Nav>
       <Nav>
@@ -52,10 +52,7 @@ const Sidebar = () => (
           <span>playlists</span>
         </li>
         <li>
-          <a href="">Melhores do sertanejo</a>
-        </li>
-        <li>
-          <a href="">Melhores do rock</a>
+          <a href="#">Melhores do sertanejo</a>
         </li>
       </Nav>
     </div>

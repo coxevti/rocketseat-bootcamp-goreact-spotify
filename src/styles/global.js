@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'rc-slider/assets/index.css';
+
 export default createGlobalStyle`
   * {
     margin: 0;

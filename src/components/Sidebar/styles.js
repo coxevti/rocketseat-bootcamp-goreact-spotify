@@ -2,30 +2,33 @@ import styled from 'styled-components';
 
 export const Container = styled.aside`
   height: 100%;
-  width: 200px;
+  min-width: 200px;
   background: #121212;
   color: #b3b3b3;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto;
   > div {
     padding: 25px;
   }
 `;
 
 export const Nav = styled.ul`
-  list-style: none;
   margin-top: 25px;
+  list-style: none;
   &:first-child {
-    margin-top: 0px;
+    margin: 0;
   }
   li {
+    display: flex;
+    align-items: center;
     a {
       color: inherit;
       text-decoration: none;
       font-size: 13px;
-      line-height: 32px;
       font-weight: ${props => (props.main ? 'bold' : 'normal')};
+      line-height: 32px;
       &:hover {
         color: #fff;
       }
@@ -48,7 +51,6 @@ export const NewPlaylist = styled.button`
   color: #b3b3b3;
   display: flex;
   align-items: center;
-
   padding: 15px 25px;
   &:hover {
     color: #fff;
