@@ -21,17 +21,19 @@ const Playlist = () => (
     </Header>
     <SongLists cellPadding={0} cellSpacing={0}>
       <thead>
-        <th />
-        <th>Título</th>
-        <th>Artista</th>
-        <th>Álbum</th>
-        <th>
-          <img src={ClockIcon} alt="duração" />
-        </th>
+        <tr>
+          <th />
+          <th>Título</th>
+          <th>Artista</th>
+          <th>Álbum</th>
+          <th>
+            <img src={ClockIcon} alt="duração" />
+          </th>
+        </tr>
       </thead>
       <tbody>
-        {[0, 1, 2, 3, 4, 5].map(() => (
-          <tr>
+        {[0, 1, 2, 3, 4, 5].map(item => (
+          <tr key={item}>
             <td>
               <img src={PlusIcon} alt="adicionar" />
             </td>

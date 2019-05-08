@@ -1,49 +1,58 @@
-import React from 'react';
-
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Creators as PlaylistsActions } from '../../store/ducks/playlists';
 import {
   Container, Title, List, Playlist,
 } from './styles';
 
-console.tron.log('jj');
+class Browser extends Component {
+  static propTypes = {
+    getPlaylistsRequest: PropTypes.func.isRequired,
+    playlists: PropTypes.shape({
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number,
+          title: PropTypes.string,
+          thumbnail: PropTypes.string,
+          description: PropTypes.string,
+        }),
+      ),
+    }).isRequired,
+  };
 
-const Browser = () => (
-  <Container>
-    <Title>Navegar</Title>
-    <List>
-      <Playlist to="/playlists/1">
-        <img
-          src="https://lastfm-img2.akamaized.net/i/u/770x0/25e5584abdb6f7e2c3b9301e676172ac.jpg"
-          alt="playlist"
-        />
-        <strong>Rock</strong>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      </Playlist>
-      <Playlist to="/playlists/1">
-        <img
-          src="https://lastfm-img2.akamaized.net/i/u/770x0/25e5584abdb6f7e2c3b9301e676172ac.jpg"
-          alt="playlist"
-        />
-        <strong>Rock</strong>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      </Playlist>
-      <Playlist to="/playlists/1">
-        <img
-          src="https://lastfm-img2.akamaized.net/i/u/770x0/25e5584abdb6f7e2c3b9301e676172ac.jpg"
-          alt="playlist"
-        />
-        <strong>Rock</strong>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      </Playlist>
-      <Playlist to="/playlists/1">
-        <img
-          src="https://lastfm-img2.akamaized.net/i/u/770x0/25e5584abdb6f7e2c3b9301e676172ac.jpg"
-          alt="playlist"
-        />
-        <strong>Rock</strong>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      </Playlist>
-    </List>
-  </Container>
-);
+  componentDidMount() {
+    const { getPlaylistsRequest } = this.props;
+    getPlaylistsRequest();
+  }
 
-export default Browser;
+  render() {
+    const { playlists } = this.props;
+    return (
+      <Container>
+        <Title>Navegar</Title>
+        <List>
+          {playlists.data.map(playlist => (
+            <Playlist to={`/playlists/${playlist.id}`} key={playlist.id}>
+              <img src={playlist.thumbnail} alt={playlist.title} />
+              <strong>{playlist.title}</strong>
+              <p>{playlist.description}</p>
+            </Playlist>
+          ))}
+        </List>
+      </Container>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  playlists: state.playlists,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(PlaylistsActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Browser);
