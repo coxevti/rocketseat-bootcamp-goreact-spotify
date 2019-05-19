@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Slider from 'rc-slider';
 import PropTypes from 'prop-types';
 import Sound from 'react-sound';
@@ -19,14 +19,15 @@ const Player = ({ player }) => (
   <Container>
     {!!player.currentSong && <Sound url={player.currentSong.file} playStatus={player.status} />}
     <Current>
-      <img
-        src="https://lastfm-img2.akamaized.net/i/u/770x0/25e5584abdb6f7e2c3b9301e676172ac.jpg"
-        alt="cover"
-      />
-      <div>
-        <span>Fuego</span>
-        <small>Alok</small>
-      </div>
+      {!!player.currentSong && (
+        <Fragment>
+          <img src={player.currentSong.thumbnail} alt={player.currentSong.title} />
+          <div>
+            <span>{player.currentSong.title}</span>
+            <small>{player.currentSong.author}</small>
+          </div>
+        </Fragment>
+      )}
     </Current>
     <Progress>
       <Controls>
@@ -79,6 +80,9 @@ const Player = ({ player }) => (
 Player.propTypes = {
   player: PropTypes.shape({
     currentSong: PropTypes.shape({
+      thumbnail: PropTypes.string,
+      title: PropTypes.string,
+      author: PropTypes.string,
       file: PropTypes.string,
     }),
     status: PropTypes.string,
