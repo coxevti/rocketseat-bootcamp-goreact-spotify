@@ -82,7 +82,11 @@ class Playlist extends Component {
             <span>PLAYLIST</span>
             <h1>{playlist.title}</h1>
             {!!playlist.songs && <p>{playlist.songs.length} músicas</p>}
-            <button type="button">PLAY</button>
+            {!playlist.songs || playlist.songs.length > 0 ? (
+              <button type="button" onClick={() => loadSong(playlist.songs[0], playlist.songs)}>
+                PLAY
+              </button>
+            ) : null}
           </div>
         </Header>
         <SongLists cellPadding={0} cellSpacing={0}>

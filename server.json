@@ -26,9 +26,9 @@
     },
     {
       "id": 5,
-      "title": "Teste",
-      "description": "As melhores cantoras POP reunidas em uma playlist pra você.",
-      "thumbnail": "https://s3-sa-east-1.amazonaws.com/gonative/linkin_park.jpg"
+      "title": "Gusttavo Lima",
+      "description": "As melhores do Gusttavo Lima reunidas em uma playlist pra você.",
+      "thumbnail": "https://www.rbsdirect.com.br/imagesrc/24360645.jpg?w=700"
     }
   ],
   "songs": [
@@ -76,6 +76,15 @@
       "file": "https://s3-sa-east-1.amazonaws.com/gonative/5.mp3",
       "thumbnail": "https://s3-sa-east-1.amazonaws.com/gonative/linkin_park.jpg",
       "playlistId": 4
+    },
+    {
+      "id": 5,
+      "title": "Eu Não Iria - DVD O Embaixador (Ao Vivo)",
+      "author": "Gusttavo Lima",
+      "album": "GUSTTAVO LIMA - O EMBAIXADOR - CD",
+      "file": "http://srv03.yt-download.org/pt/@download/320-5cf55902a610b-8080000-202/mp3/pgHrRi91-Mk/Gusttavo%2BLima%2B-%2BEu%2BN%25C3%25A3o%2BIria%2B-%2BDVD%2BO%2BEmbaixador%2B%2528Ao%2BVivo%2529.mp3",
+      "thumbnail": "https://i.ytimg.com/vi/pgHrRi91-Mk/maxresdefault.jpg",
+      "playlistId": 5
     }
   ]
 }

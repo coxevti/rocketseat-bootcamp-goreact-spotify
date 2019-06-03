@@ -54,6 +54,7 @@ export const Time = styled.div`
   align-items: center;
   margin-top: 5px;
   span {
+    width: 30px;
     font-size: 13px;
     color: #b3b3b3;
   }
